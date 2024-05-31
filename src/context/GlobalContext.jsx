@@ -11,7 +11,7 @@ export const GlobalProvider = ({ children }) => {
     useEffect(() => {
         const fetchHistorias = async () => {
             try {
-                const response = await fetch('https://json-server-1t2d.vercel.app/historias');
+                const response = await fetch('https://jsonserver-examen.vercel.app/historias');
                 console.log('Response status:', response.status); // Verifica la respuesta
                 if (!response.ok) {
                     throw new Error('Error al cargar las historias');
@@ -32,7 +32,7 @@ export const GlobalProvider = ({ children }) => {
 
     const agregarHistoria = async (historia) => {
         try {
-            const response = await fetch('https://json-server-1t2d.vercel.app/historias', {
+            const response = await fetch('https://jsonserver-examen.vercel.app/historias', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export const GlobalProvider = ({ children }) => {
 
     const editarHistoria = async (id, historiaActualizada) => {
         try {
-            const response = await fetch(`https://json-server-1t2d.vercel.app/historias/${id}`, {
+            const response = await fetch(`https://jsonserver-examen.vercel.app/historias/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export const GlobalProvider = ({ children }) => {
 
     const eliminarHistoria = async (id) => {
         try {
-            const response = await fetch(`https://json-server-1t2d.vercel.app/historias/${id}`, {
+            const response = await fetch(`https://jsonserver-examen.vercel.app/historias/${id}`, {
                 method: 'DELETE',
             });
             if (!response.ok) {
