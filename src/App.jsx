@@ -6,10 +6,12 @@ import Home from './vistas/Home';
 import Tabla from './vistas/Tabla';
 import Cards from './vistas/Cards';
 import { GlobalProvider } from './context/GlobalContext';
+import { NextUIProvider } from '@nextui-org/system';
 
 const App = () => {
   return (
     <GlobalProvider>
+      <NextUIProvider>
       <Router>
         <Header />
         <Routes>
@@ -19,6 +21,7 @@ const App = () => {
         </Routes>
         <Footer />
       </Router>
+      </NextUIProvider>
     </GlobalProvider>
   );
 };
